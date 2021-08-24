@@ -66,6 +66,6 @@ diagram created with: <https://lucid.app/documents/view/2e7294c0-6628-45b6-8b2d-
 ## Configuration
 
 - [Initial Setup of UDM-Pro](/configuration/1-UDM-Pro-Setup.md)
-- [Define networks](/configuration/2-Networks.md)
-- [Define WiFi](/configuration/3-Wifi.md)
-- [Firewall groups and rules](/configuration/4-Firewall-rules.md)
+- [Define networks](/configuration/3-Networks.md)
+- [Define WiFi](/configuration/4-Wifi.md)
+- [Firewall groups and rules](/configuration/5-Firewall-rules.md)
