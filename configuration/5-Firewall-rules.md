@@ -54,7 +54,8 @@ Rules for *LAN IN*:
 | 2002 | LANin | allow Local DNS for all LANs | Accept | TCP, UDP | All local LANs | Group: Local DNS; Port: DNS | .. |
 | 2003 | LANin | allow ping to Local DNS | Accept | ICMP | All local LANs | Local DNS | .. |
 | 2004 | LANin | allow trusted to devices | Accept | All | Trusted LANs | Home Devices (low trust) | Enable logging |
-| 2005 | LANin | block inter-LAN | Drop | All | RFC 1918 | RFC1918 | Enable logging |
+| 2005 | LANin | Allow DNS admin from Trusted LANs | Accept | All | Trusted LANs | Group: Local DNS; Port: UDM mgmt ports |
+| 2006 | LANin | block inter-LAN | Drop | All | RFC 1918 | RFC1918 | Enable logging |
 
 Rules for *LAN LOCAL*:
 
