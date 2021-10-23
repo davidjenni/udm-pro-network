@@ -14,4 +14,4 @@ Under the *Advanced* tab, accept most of the defaults, except for these:
 | *.ap | High Performance Devices | ON |
 | *.guest | L2 Isolation | ON |
 | *.IoT | Wifi Band | 2.4 GHz only (since most IoT have no 5 GHz support) |
-| *.media | Multicase Enhancement | ON |
+| *.media | Multicast Enhancement | ON |

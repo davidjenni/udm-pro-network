@@ -36,8 +36,8 @@ The resulting groups look like:
 lead to a lock out, where your PC/laptop can no longer reach the UDM-Pro!
 
 By default, the UDM-Pro has full inter-VLAN communications enabled. Firewall rules are evaluated in order,
-i.e. once the first allow or block rule is matched, the remaining rules are skipped. Best practice is to
-list allow rules with concise match criteria, followed by block rules that block whatever wasn't matched
+i.e. once an earlier allow or block rule is matched, the remaining rules are skipped. Best practice is to
+list allow rules with concise match criteria first, followed by block rules that block whatever wasn't matched
 before.
 
 Most rules are for *LANin* (i.e. traffic from the LAN segment into the router/gateway),
@@ -49,7 +49,7 @@ Rules for *LAN IN*:
 
 | Index | Type | Description | Action | IPv4 Protocol | Source | Destination | Advanced |
 | ----- | ---- | ----------- | ------ | ------------- | ------ | ----------- | -------- |
-| 2000 | LANin| allow established /related | Accept | All | Any | Any | Match Established, Related |
+| 2000 | LANin | allow established /related | Accept | All | Any | Any | Match Established, Related |
 | 2001 | LANin | allow all local to NTP | Accept | UDP | All local LANs | Any | .. |
 | 2002 | LANin | allow Local DNS for all LANs | Accept | TCP, UDP | All local LANs | Group: Local DNS; Port: DNS | .. |
 | 2003 | LANin | allow ping to Local DNS | Accept | ICMP | All local LANs | Local DNS | .. |

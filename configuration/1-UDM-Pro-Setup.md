@@ -8,16 +8,16 @@ Not going into too many details, there's good documentation on how to run throug
 - [Setup Network Application](https://help.ui.com/hc/en-us/articles/1500012237441-UniFi-Network-Use-the-UniFi-Network-Application)
 - [CrossTalk Solutions - Initial Wizard Setup](https://youtu.be/beniNcXaAKQ?t=248)
 
-To make the initial configurations, plugin your PC or laptop directly into one of the ports on the UDM-Pro;
+To make the initial configurations, plug in your PC or laptop directly into one of the ports on the UDM-Pro;
 configure your PC/laptop/MBP to acquire DHCP addresses. Open a browser at <http://192.168.1.1>
 
 Even though in my network, I plan on using a 10/8 private network, I started running the initial setup of
-UDP-Pro and adopting the unifi devices from the UDM-P's default ```192.168.1.1``` address. Run through the
+UDP-Pro and adopting the Unifi devices from the UDM-P's default ```192.168.1.1``` address. Run through the
 wizard to connect to your ISP, update the UDM-P and adopt any switches and APs you have.
 
 Note that you need to initially login to UDM-Pro with a SSO login from UI.com: <https://account.ui.com/>
 
-The setup here assume a local DNS server, using a [Pi-hole DNS server](https://pi-hole.net/) on ```10.0.90.42```
+The setup here assumes a local DNS server, I am using a [Pi-hole DNS server](https://pi-hole.net/) on ```10.0.90.42```
 
 Once you've logged in to your UDM-Pro using the SSO login, best practice is to add a local admin and set the following under:
 ```Portal | Advanced```:
@@ -25,10 +25,10 @@ Once you've logged in to your UDM-Pro using the SSO login, best practice is to a
 ![Portal-Advanced-Settings](/assets/Portal-Advanced-settings.png)
 
 Enable SSH and set your strong SSH password (you do keep all your passwords in a password manager like 1Password, right?)
-While here, also ensure that ```Remove Access`` is now disabled (unless you want to enable remote configuration of your site via ).
+While here, also ensure that ```Remove Access`` is now disabled (unless you want to enable remote configuration of your site via UI's cloud).
 
 Once the Unifi devices have been adopted, switch the UDM-Pro to your desired IP address, in my case:
-```10.0.90.1``` by navigating to [Network App | Settings | Networks](https://10.0.10.1/network/default/settings/networks)
+```10.0.90.1``` by navigating to [Network App | Settings | Networks](https://10.0.90.1/network/default/settings/networks)
 Change the **LAN** network to:
 
 | Label | Value |

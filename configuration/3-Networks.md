@@ -11,7 +11,7 @@ Time to create the networks and VLANs under [Networks](https://10.0.10.1/network
 | camera | 10.0.50.0/24 | 50 |
 
 Personal preference on the IP range starting IP address: For most VLANs, I prefer to reserve the
-first ~30-50 IP addresses.
+first ~30-50 IP addresses for any static assignments.
 
 ![home network settings](/assets/Settings-Networks-home.png)
 

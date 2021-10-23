@@ -1,6 +1,6 @@
 # Backhaul physical network
 
-Connecting the UDM via CAT5e cabling to managed switches and Unifi access points creates the
+CAT5e cabling between the UDM to the managed switches and Unifi access points creates the
 physical backbone of the network:
 
 ![backhaul topo](/assets/UDP-Pro-topo.png)

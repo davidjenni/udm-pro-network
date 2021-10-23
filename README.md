@@ -14,13 +14,13 @@ will also help others in their quest for a more solid networking experience.
 - run a reliable, secure and well performing home network with little complaints from my customer base (aka spouse & family)
 - design with Principle of Least Privilege (PoLP).
   One definition by [NIST, see page 91](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-12r1.pdf)
-- keep my customer base reasonably sheltered from online privacy mining and spying 
-- allow me to tinker and learn, hence this network setup is indeed over engineered.
-  A simple modern ISP's router & gateway could get the basic job done
+- keep my customer base reasonably sheltered from online privacy mining and spying.
+- allow me to tinker and learn, hence this network setup is indeed over-engineered.
+  A simple modern ISP's router & gateway could get the basic job done (but would be less fun to interact with).
 
 ## Design choices
 
-Disclaimer: I have no relationship with, sponsoring from nor financial interests in Ubiquiti,
+Disclaimer: I have no relationship with, no sponsoring from nor financial interests in Ubiquiti,
 I'm just a mostly happy customer of their products.
 
 About ~10 years ago, I discovered Ubiquiti's prosumer networking hardware that is indeed disruptive,
@@ -32,14 +32,14 @@ thermal stability issues) with the UDM Pro [Unifi Dream Machine Pro](https://www
 ### Basic topology
 
 This is the current physical wired topology, with the UDM-Pro as the gateway,
-and one PoE-enabled UI switch on each floor. House wiring is good for up to 1 Gbit/s,
+and one PoE-enabled UI switch on each floor. House ethernet wiring is good for up to 1 Gbit/s,
 with all runs made in CAT5e; same for patch cables.
 
 ![backhaul topo](/assets/UDP-Pro-topo.png)
 
 ### Network segmentation
 
-Following the Least Privilege principle, the LAN is separate into multiple logical segments, using
+Following the Least Privilege principle, the LAN is separated into multiple logical segments, using
 VLANs:
 | VLAN | CIDR | Medium | SSID | Purpose |
 | ---: | ---: | ------ | ---- | ------- |
@@ -55,11 +55,14 @@ from [RFC1918](https://datatracker.ietf.org/doc/html/rfc1918), e.g. from the 172
 I find it useful to reflect the sub range, e.g. ```.10.*```, to also be the VLAN id, but there is no
 technical need to do so.
 
-Note the 5 switches shown below are purely logical; the physical HW has the UDM and the 2 switched above.
-By default, the UDM allows full inter-VLAN access, but this site configuration will by default block any
-inter-VLAN connectivity, and only allow the trusted home ```VLAN (10)``` to initiate connections to the
-```IoT (30)``` and ```media (40)``` VLANs. Access from/to the ```management(1)``` LAN and trunk is 
-not allow from any VLAN; sole exception is allowing access to the UDM-P itself (10.0.10.1). Details see [Firewall](#Firewall)
+Note the 5 switches shown below are purely logical; the physical HW has the UDM and the 2 switches above.
+By default, the UDM Pro allows full inter-VLAN access, but this site's configuration will by default block
+any inter-VLAN connectivity, and only allow the trusted ```home (10)``` VLAN to initiate connections to the
+```IoT (30)``` and ```media (40)``` VLANs. Access from/to the ```management (1)``` LAN and trunk is
+not allowed from any VLAN; sole exception is allowing access to the UDM-P itself from the ```home (10)``` (10.0.10.1).
+
+Details see [Firewall](#Firewall)
+
 ![logical network](assets/UDM-P_logical_network.svg)
 diagram created with: <https://lucid.app/documents/view/2e7294c0-6628-45b6-8b2d-1b2a5b47b208>
 
