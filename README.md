@@ -73,3 +73,4 @@ diagram created with: <https://lucid.app/documents/view/2e7294c0-6628-45b6-8b2d-
 - [Define networks](/configuration/3-Networks.md)
 - [Define WiFi](/configuration/4-Wifi.md)
 - [Firewall groups and rules](/configuration/5-Firewall-rules.md)
+- [Cloudflare tunnel to LAN](configuration\6-Cloudflare-tunnel.md)
